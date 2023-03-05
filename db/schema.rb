@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_04_135714) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_05_015520) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
     t.string "number", limit: 16
-    t.decimal "balance", precision: 10, scale: 2, default: "0.0"
+    t.decimal "initial_balance", precision: 10, scale: 2, default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_accounts_on_number", unique: true
