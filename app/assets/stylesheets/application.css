@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+table.mableTable {
+    background-color: #EEE7DB;
+    width: 700px;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.mableTable td, table.mableTable th {
+    border: 1px solid #AAAAAA;
+    padding: 5px;
+}
+table.mableTable td {
+    font-size: 16px;
+}
+table.mableTable th {
+    background: #FF671F;
+
+}
+
+table.mableTable th {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+}
