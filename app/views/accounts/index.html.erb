@@ -10,13 +10,18 @@
     <td><%= number_to_currency(account.balance) %></td>
   </tr>
   <% end %>
+</table>
 
   <h2>Import Transactions</h2>
-  <h2>Upload File</h2>
   <%= form_tag(transfers_path, multipart:true, method: 'post') do %>
     <%= file_field_tag :file, class: 'input' %>
     <%= submit_tag "Upload" %>
   <% end %>
 
-
-</table>
+  <% if flash.present? %>
+    <h2> Result: </h2>
+    <% flash.each do |key, value| %>
+      <% flash_value = value  %>
+      <%= content_tag :div, flash_value.to_s.html_safe, class: "flash #{key}" %>
+    <% end %>
+  <% end %>
