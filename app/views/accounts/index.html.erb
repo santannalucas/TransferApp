@@ -10,4 +10,13 @@
     <td><%= number_to_currency(account.balance) %></td>
   </tr>
   <% end %>
+
+  <h2>Import Transactions</h2>
+  <h2>Upload File</h2>
+  <%= form_tag(transfers_path, multipart:true, method: 'post') do %>
+    <%= file_field_tag :file, class: 'input' %>
+    <%= submit_tag "Upload" %>
+  <% end %>
+
+
 </table>
