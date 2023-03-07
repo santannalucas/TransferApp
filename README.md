@@ -44,21 +44,71 @@ Tests
 • runs and provides feedback
 • calculates test files accurately
 
+* Get repository
+
+```shell
+git clone git@github.com:santannalucas/TransferApp.git
+```
 * Ruby version
 
+This app uses Ruby 3.0.0 and Rails ~> 7.0, be sure to change you version manager to version 3 and that you have rails 7 installed:
 
-* System dependencies
+```shell
+rails -v
+Rails 7.0.4.2
+ruby -v
+ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [x86_64-linux]
+bundle install
 
-* Configuration
+```
 
 * Database creation
 
+Application use PostgreSQL Database, configuration should look like this:
+
+```yml
+# PostgreSQL 10
+
+default: &default
+  adapter: postgresql
+  host: localhost
+  username: transfer_app
+  password: password
+
+production:
+  <<: *default
+  database: exercise
+
+development:
+  <<: *default
+  database: exercise_dev
+
+test:
+  <<: *default
+  database: exercise_test
+```
+
 * Database initialization
 
-* How to run the test suite
+To load initial accounts and balance, you will need to seed the DB:
+```shell
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+* Running Application
 
-* Deployment instructions
+To run applications just start the server:
+```shell
+    rails s
+```
+And then open localhost on you browser (preferable Chrome) http://127.0.0.1:3000
 
-* ...
+* Test Unit
+
+You can ran the test unit as per below:
+
+```shell
+    rails spec
+```

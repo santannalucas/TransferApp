@@ -10,7 +10,7 @@ RSpec.describe Account, type: :model do
     end
 
     it "initial_balance must be positive" do
-      account = Account.new(number: 12345678, initial_balance: -1000)
+      account = Account.new(number: 1234567812345678, initial_balance: -1000)
       expect(account).to be_invalid
       expect(account.errors[:initial_balance]).to be_present
     end
@@ -18,7 +18,7 @@ RSpec.describe Account, type: :model do
 
   describe "#balance" do
     it "returns the initial balance when the account is created" do
-      account = Account.create(number: 12345678, initial_balance: 1000)
+      account = Account.create(number: 1234567812345678, initial_balance: 1000)
       expect(account.balance).to eq(1000)
     end
 

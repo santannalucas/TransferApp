@@ -2,8 +2,8 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe Transfer, type: :model do
-  let(:from_account) { create(:account, number: 12345678, initial_balance: 1000) }
-  let(:to_account) { create(:account, number: 87654321, initial_balance: 2000) }
+  let(:from_account) { create(:account, number: 1234567812345678, initial_balance: 1000) }
+  let(:to_account) { create(:account, number: 8765432187654321, initial_balance: 2000) }
 
   describe "validations" do
     it "requires a from_account" do

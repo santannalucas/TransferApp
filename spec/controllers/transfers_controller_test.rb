@@ -5,8 +5,8 @@ RSpec.describe TransfersController, type: :controller do
 
     context 'with valid CSV file' do
       let(:file) { fixture_file_upload('transfers.csv', 'text/csv') }
-      let(:account1) { create(:account, number: '1234', initial_balance: 1000.0) }
-      let(:account2) { create(:account, number: '5678', initial_balance: 500.0) }
+      let(:account1) { create(:account, number: '1234123412341234', initial_balance: 1000.0) }
+      let(:account2) { create(:account, number: '5678567856785678', initial_balance: 500.0) }
       it 'creates transfers' do
         post :create, params: { file: file }
         expect(response).to redirect_to(accounts_path)
