@@ -6,6 +6,7 @@ require 'rspec/rails'
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 Dir[Rails.root.join('spec', 'factories', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'controllers', '**', '*.rb')].sort.each { |f| require f }
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -14,11 +14,11 @@ class TransfersController < ApplicationController
     CSV.foreach(csv_file.path, headers: false).with_index do |row, i|
       transfer = create_transfer(row)
       if transfer.errors.present?
-        errors << "Row #{i + 1} cannot be processed: #{transfer.errors.full_messages}"
+        errors << "Row #{i + 1} cannot be processed: #{transfer.errors.full_messages.to_sentence}"
       end
     end
     Rails.logger.info(errors)
-    flash[:notice] = "CSV file uploaded successfully. #{('Errors been found:' + errors.to_sentence) if errors.present?}"
+    flash[:notice] = "CSV file uploaded successfully. #{('Errors been found:' + errors.to_s) if errors.present?}"
     redirect_to accounts_path
   end
 
