@@ -17,7 +17,6 @@ class TransfersController < ApplicationController
         errors << "Row #{i + 1} cannot be processed: #{transfer.errors.full_messages.to_sentence}"
       end
     end
-    Rails.logger.info(errors)
     flash[:notice] = "CSV file uploaded successfully. #{('Errors been found:' + errors.to_s) if errors.present?}"
     redirect_to accounts_path
   end
