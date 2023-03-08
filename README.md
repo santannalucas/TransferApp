@@ -7,43 +7,6 @@ number and money cannot be transferred from them if it will put the account bala
 system that can load account balances for a single company and then accept a day's transfers in a CSV file. An example customer
 balance file is provided as well as an example days transfers.
 
-Starting state of accounts for
-Account
-
-customers of Alpha Sales:
-Balance
-
-1111234522226789 5000.00
-1111234522221234 10000.00
-2222123433331212 550.00
-1212343433335665 1200.00
-3212343433335755 50000.00
-
-Single day transactions for Alpha sales:
-from To amount
-1111234522226789 1212343433335665 500.00
-3212343433335755 2222123433331212 1000.00
-3212343433335755 1111234522226789 320.50
-1111234522221234 1212343433335665 25.60
-
-Rubrick
-Data Structure
-• uses domain models
-• uses native data structures readably
-
-Tests
-• uses rspec
-• has some coverage
-• has good coverage
-• tests are orthogonal
-• tests explain the functionality Object Orientation
-• models encapsulate logic appropriately
-• respects separation of concerns
-• short methods
-• readable methods General
-• runs and provides feedback
-• calculates test files accurately
-
 * Get repository
 
 ```shell
@@ -112,3 +75,42 @@ You can ran the test unit as per below:
 ```shell
     rails spec
 ```
+
+# Data and requirements
+
+Starting state of accounts for
+Account
+
+customers of Alpha Sales:
+Balance
+
+1111234522226789 5000.00
+1111234522221234 10000.00
+2222123433331212 550.00
+1212343433335665 1200.00
+3212343433335755 50000.00
+
+Single day transactions for Alpha sales:
+from To amount
+1111234522226789 1212343433335665 500.00
+3212343433335755 2222123433331212 1000.00
+3212343433335755 1111234522226789 320.50
+1111234522221234 1212343433335665 25.60
+
+Rubrick
+Data Structure
+• uses domain models
+• uses native data structures readably
+
+Tests
+• uses rspec
+• has some coverage
+• has good coverage
+• tests are orthogonal
+• tests explain the functionality Object Orientation
+• models encapsulate logic appropriately
+• respects separation of concerns
+• short methods
+• readable methods General
+• runs and provides feedback
+• calculates test files accurately
